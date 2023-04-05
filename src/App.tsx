@@ -1,10 +1,14 @@
 // import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './reducers/store';
+import Cart from './component/Cart';
 
 function App() {
   return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <Provider store={store}>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-3">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">Demo_1</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +44,8 @@ function App() {
             </div>
           </div>
         </nav>
+        <Cart />
+    </Provider>
   );
 }
 

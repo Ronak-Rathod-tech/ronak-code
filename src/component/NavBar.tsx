@@ -1,8 +1,14 @@
 import { Provider } from "react-redux";
 import store from "../reducers/store";
 import { NavLink } from "react-router-dom";
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+    const navigate = useNavigate();
+    const gotoLogin = () =>{
+        navigate('/login');
+    }
     return (
         <Provider store={store}>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,10 +37,7 @@ const NavBar = () => {
                             </li>
                             
                         </ul>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        <Button color="primary" variant="contained" onClick={() => gotoLogin()}>Login</Button>
                     </div>
                 </div>
             </nav>
